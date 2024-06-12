@@ -35,6 +35,7 @@ public class TicTacToe extends Application {
         GridPane Board = new GridPane();
         Board.setHgap(10);
         Board.setVgap(10);
+        Board.setStyle("-fx-background-color: #C0C0C0;");
         Board.setAlignment(Pos.CENTER);
         for (int i = 0; i <3 ; i++) {
             for (int j = 0; j < 3; j++) {
@@ -82,9 +83,18 @@ public class TicTacToe extends Application {
             &&  buttons[row][1].getText().equals(buttons[row][2].getText())
             && !buttons[row][0].getText().isEmpty()){
                 String Winner = buttons[row][0].getText();
+                String originalButtonStyle = buttons[0][0].getStyle();
+                String winnerStyle = "-fx-background-color:#FF8C00; -fx-text-fill:#000000;  -fx-font-weight: bold;-fx-font-size: 20px;"; // White background, black text,with specifix size and weight
+                buttons[row][0].setStyle(winnerStyle);
+                buttons[row][1].setStyle(winnerStyle);
+                buttons[row][2].setStyle(winnerStyle);
                 WinnerBox(Winner);
                 Updatescoare(Winner);
                 reSet();
+                // Reset the color of the winning buttons
+                buttons[row][0].setStyle(originalButtonStyle);
+                buttons[row][1].setStyle(originalButtonStyle);
+                buttons[row][2].setStyle(originalButtonStyle);
                 return;
             }
         }
@@ -94,9 +104,19 @@ public class TicTacToe extends Application {
                     &&  buttons[1][col].getText().equals(buttons[2][col].getText())
                     && !buttons[0][col].getText().isEmpty()){
                 String Winner = buttons[0][col].getText();
+                String originalButtonStyle = buttons[0][0].getStyle();
+                String winnerStyle = "-fx-background-color:#FF8C00; -fx-text-fill:#000000;  -fx-font-weight: bold;-fx-font-size: 20px;"; // White background, black text
+                buttons[0][col].setStyle(winnerStyle);
+                buttons[1][col].setStyle(winnerStyle);
+                buttons[2][col].setStyle(winnerStyle);
                 WinnerBox(Winner);
                 Updatescoare(Winner);
                 reSet();
+
+                // Reset the color of the winning buttons
+                buttons[0][col].setStyle(originalButtonStyle);
+                buttons[1][col].setStyle(originalButtonStyle);
+                buttons[2][col].setStyle(originalButtonStyle);
                 return;
             }
         }
@@ -107,9 +127,21 @@ public class TicTacToe extends Application {
                     && !buttons[0][0].getText().isEmpty())
             {
                 String Winner = buttons[0][0].getText();
+                String originalButtonStyle = buttons[0][0].getStyle();
+                String winnerStyle = "-fx-background-color:#FF8C00; -fx-text-fill:#000000;  -fx-font-weight: bold;-fx-font-size: 20px;"; // White background, black text
+                buttons[0][0].setStyle(winnerStyle);
+                buttons[1][1].setStyle(winnerStyle);
+                buttons[2][2].setStyle(winnerStyle);
                 WinnerBox(Winner);
                 Updatescoare(Winner);
                 reSet();
+
+                // Reset the color of the winning buttons
+                buttons[0][0].setStyle(originalButtonStyle);
+                buttons[1][1].setStyle(originalButtonStyle);
+                buttons[2][2].setStyle(originalButtonStyle);
+
+
                 return;
             }
         }
@@ -120,9 +152,18 @@ public class TicTacToe extends Application {
                     && !buttons[0][2].getText().isEmpty())
             {
                 String Winner = buttons[0][2].getText();
+                String originalButtonStyle = buttons[0][0].getStyle();
+                String winnerStyle = "-fx-background-color:#FF8C00; -fx-text-fill:#000000;  -fx-font-weight: bold;-fx-font-size: 20px;"; // White background, 
+                buttons[0][2].setStyle(winnerStyle);
+                buttons[1][1].setStyle(winnerStyle);
+                buttons[2][0].setStyle(winnerStyle);
                 WinnerBox(Winner);
                 Updatescoare(Winner);
                 reSet();
+                // Reset the color of the winning buttons
+                buttons[0][2].setStyle(originalButtonStyle);
+                buttons[1][1].setStyle(originalButtonStyle);
+                buttons[2][0].setStyle(originalButtonStyle);
                 return;
             }
         }
