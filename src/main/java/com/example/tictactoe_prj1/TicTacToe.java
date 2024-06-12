@@ -84,7 +84,7 @@ public class TicTacToe extends Application {
             && !buttons[row][0].getText().isEmpty()){
                 String Winner = buttons[row][0].getText();
                 String originalButtonStyle = buttons[0][0].getStyle();
-                String winnerStyle = "-fx-background-color:#FF8C00; -fx-text-fill:#000000;  -fx-font-weight: bold;-fx-font-size: 20px;"; // White background, black text,with specifix size and weight
+                String winnerStyle = "-fx-background-color:#FF8C00; -fx-text-fill:#000000;  -fx-font-weight: bold;-fx-font-size: 20px;"; // White background, black text
                 buttons[row][0].setStyle(winnerStyle);
                 buttons[row][1].setStyle(winnerStyle);
                 buttons[row][2].setStyle(winnerStyle);
@@ -153,7 +153,7 @@ public class TicTacToe extends Application {
             {
                 String Winner = buttons[0][2].getText();
                 String originalButtonStyle = buttons[0][0].getStyle();
-                String winnerStyle = "-fx-background-color:#FF8C00; -fx-text-fill:#000000;  -fx-font-weight: bold;-fx-font-size: 20px;"; // White background, 
+                String winnerStyle = "-fx-background-color:#FF8C00; -fx-text-fill:#000000;  -fx-font-weight: bold;-fx-font-size: 20px;"; // White background,
                 buttons[0][2].setStyle(winnerStyle);
                 buttons[1][1].setStyle(winnerStyle);
                 buttons[2][0].setStyle(winnerStyle);
@@ -184,15 +184,15 @@ public class TicTacToe extends Application {
         }
     }
 
-
+ // message to display that of winning the game
     private void WinnerBox(String Winner){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Winner");
-        alert.setContentText("Congratulatins. " + Winner +" you defeated the other player");
+        alert.setContentText("Congratulatins. " + Winner +" you defeated the other player ");
         alert.setHeaderText("");
         alert.showAndWait();
     }
-
+// message box if the game is tied
     private void TieBox(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("GAME IS TIE");
@@ -202,6 +202,7 @@ public class TicTacToe extends Application {
         alert.showAndWait();
     }
 
+    // updating scores of each player
     private void Updatescoare(String winner){
         if(winner.equals("X")){
             playerXscore++;
@@ -212,6 +213,7 @@ public class TicTacToe extends Application {
         }
     }
 
+    // resting game after a player won
     private void reSet(){
         for(Button row[] : buttons ){
             for(Button button : row){
